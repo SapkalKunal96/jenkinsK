@@ -3,8 +3,8 @@ pipeline {
         label 'ubuntu-virtualbox'
     }
     environment {
-        build_id = "${BUILD_ID}"
-        git_owner = "${GIT_AUTHOR_NAME}"
+        build_id = "${env.BUILD_ID}"
+        git_owner = "${env.GIT_AUTHOR_NAME}"
     }
     stages {
         stage('test version') {
@@ -17,21 +17,20 @@ pipeline {
                 sh 'node --version'
             }
         }
-        stage('Print hello world on "${label}"') {
+        stage('Print hello world on label') {
             steps {
-                sh 'echo "Hello World"'
+                echo "Hello World on label: ${env.NODE_LABELS}"
             }
         }
         stage('Print build id') {
             steps {
-                sh 'echo "Build id is $build_id"'
+                sh "echo Build id is $build_id"
             }
         }
         stage('Print git owner') {
-            steps { 
-                sh 'echo Git owner is "$git_owner"'
+            steps {
+                sh "echo Git owner is $git_owner"
             }
         }
-
     }
 }
