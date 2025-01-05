@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'ubuntu-virtualbox'
+        label 'ubuntu-local'
     }
     environment {
         build_id = "${env.BUILD_ID}"
@@ -17,7 +17,7 @@ pipeline {
                 sh 'node --version'
             }
         }
-        stage('Print hello world on label') {
+        stage('Print hello world on current machine') {
             steps {
                 echo "Hello World on label: ${env.NODE_LABELS}"
             }
