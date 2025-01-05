@@ -3,8 +3,8 @@ pipeline {
         label 'ubuntu-virtualbox'
     }
     environment {
-        build_id = ${BUILD_ID}
-        git_owner = ${GIT_AUTHOR_NAME}
+        build_id = "${BUILD_ID}"
+        git_owner = "${GIT_AUTHOR_NAME}"
     }
     stages {
         stage('test version') {
