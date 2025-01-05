@@ -1,6 +1,6 @@
 pipeline {
     node {
-        label 'ubuntu-local'
+        label 'ubuntu-virtualbox'
     }
     agent {
         docker {
