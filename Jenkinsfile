@@ -1,4 +1,7 @@
 pipeline {
+    node {
+        label 'ubuntu-local'
+    }
     agent {
         docker {
             image 'node:16.0.0-alpine'
