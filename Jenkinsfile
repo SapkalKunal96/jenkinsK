@@ -17,19 +17,19 @@ pipeline {
                 sh 'node --version'
             }
         }
-        stage('Print hello world on ${agent}') {
+        stage('Print hello world on "${label}"') {
             steps {
                 sh 'echo "Hello World"'
             }
         }
         stage('Print build id') {
             steps {
-                sh echo "Build id is ${build_id}"
+                sh 'echo "Build id is $build_id"'
             }
         }
         stage('Print git owner') {
             steps { 
-                sh echo "Git owner is ${git_owner}"
+                sh 'echo Git owner is "$git_owner"'
             }
         }
 
